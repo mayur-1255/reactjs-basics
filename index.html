@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const result = React.createElement("h1", {}, "How are you");
+        const result2 = React.createElement("h2", {}, "How are you");
+        const result3 = React.createElement("h3", {}, "How are you");
+        const result4 = React.createElement("h4", {}, "How are you");
+        const result5 = React.createElement("h5", {}, "How are you");
+        const result6 = React.createElement("h6", {}, "How are you");
+        const result7 = React.createElement("img", { src: "img1.jpg", alt: "Description", width: "200", height: "150" });
+
+        const table = React.createElement(
+            "table", { border: "1" },
+            React.createElement("thead", {},
+                React.createElement("tr", {},
+                    React.createElement("th", {}, "Name"),
+                    React.createElement("th", {}, "Age")
+                )
+            ),
+            React.createElement(
+                "tbody", {},
+                React.createElement("tr",{},
+                    React.createElement("td", {}, "Mayur"),
+                    React.createElement("td", {}, "21")
+                ),
+                React.createElement("tr",{},
+                    React.createElement("td", {}, "Yash"),
+                    React.createElement("td", {}, "22")
+                )
+            )
+
+        );
+
+        const form = React.createElement("form",{},
+                React.createElement("h2", {}, "Login Form"),
+                React.createElement("input", { type: "password", placeholder: "Enter password" }),
+                React.createElement("br"),
+                React.createElement("input", { type: "email", name: "email",placeholder: "Enter Email" }),
+                React.createElement("br"),
+                React.createElement("input", { type: "submit", value: "Login" })
+
+
+            );
+
+
+        const allElements = React.createElement("div", {}, result, result2, result3, result3, result4, result5, result6, result7, table,form);
+
+        const targetDiv = document.getElementById("root");
+        const sroot = ReactDOM.createRoot(targetDiv);
+        sroot.render(allElements);
+
+
+
+
+    </script>
+</body>
+
+</html>
